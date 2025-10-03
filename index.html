@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tiny Tower Defense</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Tiny Tower Defense</h1>
+      <div class="hud">
+        <div>Money: $<span id="money">100</span></div>
+        <div>Lives: <span id="lives">10</span></div>
+        <div>Wave: <span id="wave">0</span></div>
+        <div><button id="startWave">Start Wave</button></div>
+      </div>
+    </header>
+
+    <section class="game-row">
+      <canvas id="map" width="640" height="480" aria-label="Tower defense map"></canvas>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <h3>Build Towers</h3>
+          <button class="tower-btn" data-type="basic">Basic ($50)</button>
+          <button class="tower-btn" data-type="sniper">Sniper ($80)</button>
+          <div class="info">
+            <p>Click a tower then click a valid tile to place. Towers can't be placed on the path.</p>
+            <p>Press R to refund last tower (partial).</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Game</h3>
+          <button id="sellLast">Refund Last Tower</button>
+          <button id="reset">Reset Game</button>
+        </div>
+
+        <div class="panel small">
+          <h4>Controls</h4>
+          <ul>
+            <li>Click to place tower</li>
+            <li>R or Refund to get partial money back</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <footer>Small tower defense — extend however you like.</footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
